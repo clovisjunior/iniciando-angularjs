@@ -13,8 +13,8 @@
   }
 
   var config = {
-    appErrorPrefix: '[iniciandoAngularjs Error] ',
-    appTitle: 'iniciandoAngularjs'
+    appErrorPrefix: '[IniciandoAngularjs Error] ',
+    appTitle: 'Iniciando com AngularJS'
   };
 
   core.value('config', config);
