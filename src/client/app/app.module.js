@@ -1,13 +1,13 @@
 (function() {
-  'use strict';
+    'use strict';
 
-  angular.module('app', [
-    'app.core',
-    'app.widgets',
-    'app.dashboard',
-    'app.layout',
-    'app.cep',
-    'app.mapa'
-  ]);
+    angular.module('app', [
+        'app.core',
+        'app.layout',
+        'app.login',
+        'app.cep',
+        'app.logradouro',
+        'app.usuario'
+    ]);
 
 })();
