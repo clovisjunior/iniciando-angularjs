@@ -13,6 +13,7 @@
 
     var service = {
         pesquisarCEP: pesquisarCEP,
+        pesquisarLogradouro: pesquisarLogradouro,
         pesquisarUsuarioPorNome: pesquisarUsuarioPorNome,
         listarTodosUsuario: listarTodosUsuario,
         alterarUsuario: alterarUsuario,
@@ -25,6 +26,13 @@
     function pesquisarCEP(cep){
         return $http
             .get(URL + '/api/logradouro/cep/' + cep)
+            .then(success)
+            .catch(fail);
+    }
+
+    function pesquisarLogradouro(logradouro) {
+        return $http
+            .get(URL + '/api/logradouro/logNome/' + logradouro)
             .then(success)
             .catch(fail);
     }

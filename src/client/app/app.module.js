@@ -7,7 +7,8 @@
     'app.layout',
     'app.login',
     'app.usuario',
-    'app.cep'
+    'app.cep',
+    'app.logradouro'
   ]);
 
 })();
