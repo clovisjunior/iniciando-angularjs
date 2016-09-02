@@ -5,7 +5,8 @@
     'app.core',
     'app.widgets',
     'app.layout',
-    'app.login'
+    'app.login',
+    'app.usuario'
   ]);
 
 })();

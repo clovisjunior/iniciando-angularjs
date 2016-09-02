@@ -1,0 +1,56 @@
+<section class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="widget wviolet">
+                    <div ht-widget-header title="{{vm.title}}"></div>
+                    <div class="widget-content user">
+                        <div class="form-group">
+                            <input type="text" class="form-control" ng-model="vm.nome" enter-input-text="vm.pesquisar()" placeholder="Nome">
+                            <button type="button" class="btn btn-default" ng-click="vm.pesquisar()">Pesquisar</button>
+                            <button type="button" class="btn btn-default" ng-click="vm.listarTodos()">Listar Todos</button>
+                            <button type="button" class="btn btn-primary" ui-sref="usuarioincluir">Novo Usuário</button>
+                        </div>
+                    </div>
+                    <div class="widget-foot">
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="widget wviolet">
+                    <div ht-widget-header title="{{vm.titleResult}}"></div>
+                    <div class="widget-content text-center text-info">
+                        <table class="table table-condensed table-striped">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                    <th>Perfil</th>
+                                    <th>Email</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="p in vm.lista">
+                                    <td>{{p.id}}</td>
+                                    <td>{{p.name}}</td>
+                                    <td>{{p.perfil}}</td>
+                                    <td>{{p.email}}</td>
+                                    <td>
+                                        <button ng-click="vm.alterar(p)">Alterar</button>
+                                        <button ng-click="vm.excluir(p)">Excluir</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="widget-foot">
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
