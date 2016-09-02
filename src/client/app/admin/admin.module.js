@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('app.cep', [
+  angular.module('app.admin', [
     'app.core',
     'app.widgets'
   ]);

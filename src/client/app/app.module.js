@@ -4,10 +4,9 @@
   angular.module('app', [
     'app.core',
     'app.widgets',
+    'app.admin',
     'app.dashboard',
-    'app.layout',
-    'app.cep',
-    'app.mapa'
+    'app.layout'
   ]);
 
 })();

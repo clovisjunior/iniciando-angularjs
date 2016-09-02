@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app.cep')
+    .module('app.admin')
     .run(appRun);
 
   appRun.$inject = ['routerHelper'];
@@ -14,16 +14,16 @@
   function getStates() {
     return [
       {
-        state: 'cep',
+        state: 'admin',
         config: {
-          url: '/cep',
-          templateUrl: 'app/cep/cep.html',
-          controller: 'CepController',
+          url: '/admin',
+          templateUrl: 'app/admin/admin.html',
+          controller: 'AdminController',
           controllerAs: 'vm',
-          title: 'CEP',
+          title: 'Admin',
           settings: {
             nav: 2,
-            content: '<i class="fa fa-lock"></i> CEP'
+            content: '<i class="fa fa-lock"></i> Admin'
           }
         }
       }
