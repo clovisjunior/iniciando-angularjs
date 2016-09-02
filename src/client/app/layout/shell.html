@@ -1,9 +1,47 @@
 <div ng-controller="ShellController as vm">
   <header class="clearfix">
-    <ht-top-nav navline="vm.navline"></ht-top-nav>
+      <nav class="navbar navbar-fixed-top navbar-inverse">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand"><span class="brand-title">{{vm.navline.title}}</span></a>
+          <a class="btn navbar-btn navbar-toggle" ng-click="isCollapsed = !isCollapsed">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+        </div>
+        <div class="navbar-collapse collapse" uib-collapse="isCollapsed">
+          <div class="pull-right navbar-logo">
+            <ul class="nav navbar-nav pull-right">
+                <li class="dropdown">
+                    <a href="/login" ng-if="!currentUser">
+                        <span class="ng-binding"> <i class="glyphicon glyphicon-log-in"></i> Entrar</span>
+                    </a>
+                    <a href="#" ng-if="currentUser" ng-click="vm.logout()">
+                        <span class="ng-binding">Sair</i> </span>
+                    </a>
+                </li>
+              <li>
+                <a ng-href="{{vm.navline.link}}" target="_blank">
+                              {{vm.navline.text}}
+                          </a>
+              </li>
+              <li class="dropdown dropdown-big">
+                <a href="http://www.angularjs.org" target="_blank">
+                  <img src="images/AngularJS-small.png" />
+                </a>
+              </li>
+              <li>
+                <a href="http://www.gulpjs.com/" target="_blank">
+                  <img src="images/gulp-tiny.png" />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
   </header>
   <section id="content" class="content">
-    <div ng-include="'app/layout/sidebar.html'"></div>
+    <div ng-if="currentUser" ng-include="'app/layout/sidebar.html'"></div>
 
     <div ui-view class="shuffle-animation"></div>
 

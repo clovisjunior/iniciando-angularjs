@@ -5,9 +5,9 @@
     .module('app.layout')
     .controller('ShellController', ShellController);
 
-  ShellController.$inject = ['$rootScope', '$timeout', 'config', 'logger'];
+  ShellController.$inject = ['$rootScope', '$timeout', 'config', 'logger', 'appSecurity', '$location'];
   /* @ngInject */
-  function ShellController($rootScope, $timeout, config, logger) {
+  function ShellController($rootScope, $timeout, config, logger, appSecurity, $location) {
     var vm = this;
     vm.busyMessage = 'Please wait ...';
     vm.isBusy = true;
@@ -23,6 +23,7 @@
     function activate() {
       logger.success(config.appTitle + ' loaded!', null);
       hideSplash();
+      fillUsername();
     }
 
     function hideSplash() {
@@ -31,5 +32,15 @@
         $rootScope.showSplash = false;
       }, 1000);
     }
+
+    function fillUsername() {
+        $rootScope.currentUser = appSecurity.getUserFromToken();
+    }
+
+    vm.logout = function() {
+        appSecurity.removeToken();
+        delete $rootScope.currentUser;
+        $location.path('/');
+    };
   }
 })();
