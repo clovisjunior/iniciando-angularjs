@@ -33,6 +33,7 @@
     }
 
     app.config(function ($httpProvider) {
+        $httpProvider.defaults.cache = false;
         $httpProvider.interceptors.push('authInterceptor');
     });
 })();
