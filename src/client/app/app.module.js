@@ -6,7 +6,8 @@
     'app.widgets',
     'app.layout',
     'app.login',
-    'app.usuario'
+    'app.usuario',
+    'app.cep'
   ]);
 
 })();

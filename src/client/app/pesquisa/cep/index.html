@@ -1,0 +1,49 @@
+<section class="mainbar">
+    <section class="matter">
+        <div class="container">
+            <div class="row">
+                <div class="widget wviolet">
+                    <div ht-widget-header title="{{vm.title}}"></div>
+                    <div class="widget-content user">
+                        <div class="form-group">
+                            <input type="text" class="form-control" ng-model="vm.cep" ui-br-cep-mask enter-input-text="vm.pesquisar()" placeholder="CEP">
+                            <button type="button" class="btn btn-default" ng-click="vm.pesquisar()">Pesquisar</button>
+                        </div>
+                    </div>
+                    <div class="widget-foot">
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="widget wviolet">
+                    <div ht-widget-header title="{{vm.titleResult}}"></div>
+                    <div class="widget-content text-center text-info">
+                        <table class="table table-condensed table-striped">
+                            <thead>
+                                <tr>
+                                    <th>CEP</th>
+                                    <th>Tipo</th>
+                                    <th>Logradouro</th>
+                                    <th>UF</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="p in vm.listaCeps">
+                                    <td>{{p.cep}}</td>
+                                    <td>{{p.logTipoLogradouro}}</td>
+                                    <td>{{p.logNo}}</td>
+                                    <td>{{p.ufeSg}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="widget-foot">
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>

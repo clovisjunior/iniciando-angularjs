@@ -12,6 +12,7 @@
     var URL = 'https://cep-fwkdemoiselle.rhcloud.com';
 
     var service = {
+        pesquisarCEP: pesquisarCEP,
         pesquisarUsuarioPorNome: pesquisarUsuarioPorNome,
         listarTodosUsuario: listarTodosUsuario,
         alterarUsuario: alterarUsuario,
@@ -21,7 +22,12 @@
 
     return service;
 
-    function getMessageCount() { return $q.when(72); }
+    function pesquisarCEP(cep){
+        return $http
+            .get(URL + '/api/logradouro/cep/' + cep)
+            .then(success)
+            .catch(fail);
+    }
 
     function pesquisarUsuarioPorNome(nome) {
         return $http
