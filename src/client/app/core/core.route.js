@@ -7,7 +7,7 @@
 
   /* @ngInject */
   function appRun(routerHelper) {
-    var otherwise = '/404';
+    var otherwise = '/login';
     routerHelper.configureStates(getStates(), otherwise);
   }
 
