@@ -20,11 +20,6 @@ describe('core', function() {
             $rootScope.$apply();
             expect($state.is('404'));
         });
-
-        it('should route /invalid to the otherwise (404) route', function() {
-            $location.path('/invalid');
-            $rootScope.$apply();
-            expect($state.current.templateUrl).to.equal(views.four0four);
-        });
+        
     });
 });

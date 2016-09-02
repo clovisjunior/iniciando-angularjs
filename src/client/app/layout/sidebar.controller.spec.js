@@ -3,7 +3,7 @@ describe('layout', function() {
     describe('sidebar', function() {
         var controller;
         var views = {
-            dashboard: 'app/dashboard/dashboard.html',
+            usuario: 'app/usuario/listar/index.html',
             customers: 'app/customers/customers.html'
         };
 
@@ -12,7 +12,7 @@ describe('layout', function() {
             bard.inject('$controller', '$httpBackend', '$location',
             '$rootScope', '$state', 'routerHelper');
         });
-        
+
         beforeEach(function() {
             routerHelper.configureStates(mockData.getMockStates(), '/');
             controller = $controller('SidebarController');

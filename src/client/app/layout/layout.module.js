@@ -3,6 +3,7 @@
 
     angular.module('app.layout', [
         'app.core',
-        'ui.bootstrap.collapse'
+        'ui.bootstrap.collapse',
+        'app.security'
     ]);
 })();
